@@ -344,20 +344,14 @@ int main()
     {
         showMainMenu();
 
-        cin >> menuChoice;
+        menuChoice = getValidChoice(1, 4);
 
         switch (menuChoice)
         {
             case 1:
-                showGenres();
-
-                cout << "\n";
-                showMoods();
-
-                cout << "\n";
-                showDurations();
-
+                getRecommendation();
                 break;
+
 
             case 2:
                 showGenres();
