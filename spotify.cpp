@@ -98,6 +98,7 @@ case 1:
     break;
 }
 
+// Structure to store playlist information
 struct Playlist
 {
     string name;
@@ -219,6 +220,63 @@ void displayRecommendation(const Playlist& playlist)
 }
 
 void getRecommendation()
+{
+    int genreChoice;
+    int moodChoice;
+    int durationChoice;
+
+    cout << "\n==================================================\n";
+    cout << "             MUSIC RECOMMENDATION\n";
+    cout << "==================================================\n";
+
+    showGenres();
+    cout << "Enter your genre choice: ";
+    genreChoice = getValidChoice(1, 5);
+
+    showMoods();
+    cout << "Enter your mood choice: ";
+    moodChoice = getValidChoice(1, 4);
+
+    showDurations();
+    cout << "Enter your preferred duration: ";
+    durationChoice = getValidChoice(1, 3);
+
+    cout << "\nGenerating your personalised recommendation...\n";
+
+    Playlist recommendation =
+        generateRecommendation(
+            genreChoice,
+            moodChoice,
+            durationChoice
+        );
+
+    displayRecommendation(recommendation);
+}
+
+void showProgramInformation()
+{
+    cout << "\n==================================================\n";
+    cout << "              PROGRAM INFORMATION\n";
+    cout << "==================================================\n";
+
+    cout << "Program Name:\n";
+    cout << "Spotify Music Recommendation Assistant\n\n";
+
+    cout << "Purpose:\n";
+    cout << "This C++ program demonstrates a simple music\n";
+    cout << "recommendation system inspired by Spotify's\n";
+    cout << "personalised music discovery concept.\n\n";
+
+    cout << "Users select their preferred genre, mood and\n";
+    cout << "playlist duration. The program then generates\n";
+    cout << "a suitable playlist recommendation.\n";
+
+    cout << "\nImportant:\n";
+    cout << "This is an educational C++ prototype and is not\n";
+    cout << "connected to the actual Spotify platform.\n";
+
+    cout << "==================================================\n";
+}
 
 int main()
 {
@@ -250,7 +308,7 @@ int main()
                 break;
 
             case 3:
-                cout << "\nProgram Information selected.\n";
+                showProgramInformation();
                 break;
 
             case 4:
