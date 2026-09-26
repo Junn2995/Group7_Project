@@ -49,6 +49,55 @@ void showDurations()
     cout << "--------------------------------------------------\n";
 }
 
+int getValidChoice(int minimum, int maximum)
+{
+    int choice;
+
+    while (true)
+    {
+        cin >> choice;
+
+        if (cin.fail())
+        {
+            cout << "Invalid input. Please enter a number: ";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+        else if (choice < minimum || choice > maximum)
+        {
+            cout << "Invalid choice. Please enter a number from "
+                 << minimum << " to " << maximum << ": ";
+        }
+        else
+        {
+            return choice;
+        }
+    }
+}
+
+case 1:
+{
+    int genreChoice;
+    int moodChoice;
+    int durationChoice;
+
+    showGenres();
+    cout << "Enter your genre choice: ";
+    genreChoice = getValidChoice(1, 5);
+
+    showMoods();
+    cout << "Enter your mood choice: ";
+    moodChoice = getValidChoice(1, 4);
+
+    showDurations();
+    cout << "Enter your preferred duration: ";
+    durationChoice = getValidChoice(1, 3);
+
+    cout << "\nYour selections have been recorded.\n";
+
+    break;
+}
+
 int main()
 {
     int menuChoice;
