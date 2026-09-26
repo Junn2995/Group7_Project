@@ -40,6 +40,15 @@ void showMoods()
     cout << "--------------------------------------------------\n";
 }
 
+void showDurations()
+{
+    cout << "\n-------------- PLAYLIST DURATION ----------------\n";
+    cout << "1. Short  - Less than 30 minutes\n";
+    cout << "2. Medium - 30 to 60 minutes\n";
+    cout << "3. Long   - More than 60 minutes\n";
+    cout << "--------------------------------------------------\n";
+}
+
 int main()
 {
     int menuChoice;
@@ -54,9 +63,15 @@ int main()
 
         switch (menuChoice)
         {
-            ccase 1:
+            case 1:
                 showGenres();
+
+                cout << "\n";
                 showMoods();
+
+                cout << "\n";
+                showDurations();
+
                 break;
 
             case 2:
