@@ -30,6 +30,16 @@ void showGenres()
     cout << "--------------------------------------------------\n";
 }
 
+void showMoods()
+{
+    cout << "\n---------------- SELECT YOUR MOOD ----------------\n";
+    cout << "1. Happy\n";
+    cout << "2. Relaxed\n";
+    cout << "3. Energetic\n";
+    cout << "4. Sad\n";
+    cout << "--------------------------------------------------\n";
+}
+
 int main()
 {
     int menuChoice;
@@ -44,8 +54,9 @@ int main()
 
         switch (menuChoice)
         {
-            case 1:
-                cout << "\nMusic Recommendation selected.\n";
+            ccase 1:
+                showGenres();
+                showMoods();
                 break;
 
             case 2:
