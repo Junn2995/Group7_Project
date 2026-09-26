@@ -19,6 +19,17 @@ void showMainMenu()
     cout << "Enter your choice: ";
 }
 
+void showGenres()
+{
+    cout << "\n---------------- AVAILABLE GENRES ----------------\n";
+    cout << "1. Pop\n";
+    cout << "2. Rock\n";
+    cout << "3. Hip-Hop\n";
+    cout << "4. R&B\n";
+    cout << "5. K-Pop\n";
+    cout << "--------------------------------------------------\n";
+}
+
 int main()
 {
     int menuChoice;
@@ -38,7 +49,7 @@ int main()
                 break;
 
             case 2:
-                cout << "\nBrowse Genres selected.\n";
+                showGenres();
                 break;
 
             case 3:
