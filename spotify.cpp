@@ -75,29 +75,6 @@ int getValidChoice(int minimum, int maximum)
     }
 }
 
-case 1:
-{
-    int genreChoice;
-    int moodChoice;
-    int durationChoice;
-
-    showGenres();
-    cout << "Enter your genre choice: ";
-    genreChoice = getValidChoice(1, 5);
-
-    showMoods();
-    cout << "Enter your mood choice: ";
-    moodChoice = getValidChoice(1, 4);
-
-    showDurations();
-    cout << "Enter your preferred duration: ";
-    durationChoice = getValidChoice(1, 3);
-
-    cout << "\nYour selections have been recorded.\n";
-
-    break;
-}
-
 // Structure to store playlist information
 struct Playlist
 {
@@ -131,6 +108,7 @@ string getGenreName(int genreChoice)
             return "Unknown";
     }
 }
+
 string getMoodName(int moodChoice)
 {
     switch (moodChoice)
