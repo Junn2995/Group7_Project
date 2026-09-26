@@ -198,6 +198,28 @@ Playlist generateRecommendation(
     return recommendation;
 }
 
+void displayRecommendation(const Playlist& playlist)
+{
+    cout << "\n==================================================\n";
+    cout << "              YOUR RECOMMENDATION\n";
+    cout << "==================================================\n";
+
+    cout << "Playlist : " << playlist.name << endl;
+    cout << "Genre    : " << playlist.genre << endl;
+    cout << "Mood     : " << playlist.mood << endl;
+    cout << "Duration : " << playlist.duration << endl;
+
+    cout << "\nWhy this playlist?\n";
+    cout << playlist.description << endl;
+
+    cout << "\nThis recommendation is generated based on "
+         << "your selected preferences.\n";
+
+    cout << "==================================================\n";
+}
+
+void getRecommendation()
+
 int main()
 {
     int menuChoice;
