@@ -109,10 +109,66 @@ struct Playlist
 };
 
 string getGenreName(int genreChoice)
+{
+    switch (genreChoice)
+    {
+        case 1:
+            return "Pop";
 
+        case 2:
+            return "Rock";
+
+        case 3:
+            return "Hip-Hop";
+
+        case 4:
+            return "R&B";
+
+        case 5:
+            return "K-Pop";
+
+        default:
+            return "Unknown";
+    }
+}
 string getMoodName(int moodChoice)
+{
+    switch (moodChoice)
+    {
+        case 1:
+            return "Happy";
+
+        case 2:
+            return "Relaxed";
+
+        case 3:
+            return "Energetic";
+
+        case 4:
+            return "Sad";
+
+        default:
+            return "Unknown";
+    }
+}
 
 string getDurationName(int durationChoice)
+{
+    switch (durationChoice)
+    {
+        case 1:
+            return "Short";
+
+        case 2:
+            return "Medium";
+
+        case 3:
+            return "Long";
+
+        default:
+            return "Unknown";
+    }
+}
 
 Playlist generateRecommendation(
     int genreChoice,
