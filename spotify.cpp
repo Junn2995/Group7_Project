@@ -430,7 +430,7 @@ Playlist generateRecommendation(
     return recommendation;
 }
 
-void displayRecommendation(const Playlist& playlist)
+void displayRecommendation(const Playlist& playlist, int durationChoice)
 {
     cout << "\n==================================================\n";
     cout << "              YOUR RECOMMENDATION\n";
@@ -440,6 +440,22 @@ void displayRecommendation(const Playlist& playlist)
     cout << "Genre    : " << playlist.genre << endl;
     cout << "Mood     : " << playlist.mood << endl;
     cout << "Duration : " << playlist.duration << endl;
+
+    int songLimit = 5;
+    if (durationChoice == 2)
+    {
+        songLimit = 10;
+    }
+    else if (durationChoice == 3)
+    {
+        songLimit = 15;
+    }
+
+    cout << "Songs    :\n";
+    for (int i = 0; i < songLimit && i < playlist.songs.size(); ++i)
+    {
+        cout << " " << i + 1 << ". " << playlist.songs[i] << endl;
+    }
 
     cout << "\nWhy this playlist?\n";
     cout << playlist.description << endl;
@@ -481,7 +497,7 @@ void getRecommendation()
             durationChoice
         );
 
-    displayRecommendation(recommendation);
+    displayRecommendation(recommendation, durationChoice);
 }
 
 void showProgramInformation()
